@@ -11,16 +11,22 @@ mnist = tf.keras.datasets.mnist
 x_train = tf.keras.utils.normalize(x_train, axis=1)
 x_test = tf.keras.utils.normalize(x_test, axis=1)
 
-model = tf.keras.models.Sequential()
+# model = tf.keras.models.Sequential()
 
-# adding layers to the model
-model.add(tf.keras.layers.Flatten(input_shape=(28, 28)))
-model.add(tf.keras.layers.Dense(128, activation="relu"))
-model.add(tf.keras.layers.Dense(128, activation="relu"))
-model.add(tf.keras.layers.Dense(10, activation="softmax"))
+# # adding layers to the model
+# model.add(tf.keras.layers.Flatten(input_shape=(28, 28)))
+# model.add(tf.keras.layers.Dense(128, activation="relu"))
+# model.add(tf.keras.layers.Dense(128, activation="relu"))
+# model.add(tf.keras.layers.Dense(10, activation="softmax"))
 
-model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"])
+# model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"])
 
-# Train the model
-model.fit(x_train, y_train, epochs=3)
-model.save("Handwritten.keras")
+# # Train the model
+# model.fit(x_train, y_train, epochs=3)
+# model.save("Handwritten.keras")
+
+model = tf.keras.models.load_model("Handwritten.keras")
+
+loss, accuracy = model.evaluate(x_test, y_test)
+print(loss)
+print(accuracy)
