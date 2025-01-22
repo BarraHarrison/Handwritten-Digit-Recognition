@@ -19,3 +19,17 @@ The MNIST dataset was used to train the model and it can predict digits based on
 - os: Checking if the file exists
 
 ## Loading and Preprocessing the MNIST dataset
+- MNIST dataset contains 60,000 training images and 10,000 testing images
+
+## Defining and Training the Model
+- This code can be commented out once the model is trained and saved
+- Flatten converts 2D images into 1D arrays
+- Dense layers for relu activation
+- One Dense layer for rounding up (softmax)
+- Model compiled with "adam" optimizer
+- The model is trained for 3 epochs (epochs are just iterations)
+
+## Loading the Saved Model
+- The saved model is reloaded (Handwritten.keras)
+- No need to retrain the model
+
