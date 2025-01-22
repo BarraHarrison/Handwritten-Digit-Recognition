@@ -33,3 +33,10 @@ The MNIST dataset was used to train the model and it can predict digits based on
 - The saved model is reloaded (Handwritten.keras)
 - No need to retrain the model
 
+## Predicting the Handwritten Digits
+- Python script processes the digit images stored in the digits directory
+- Image loaded using OpenCV (cv2.imread)
+- Numpy used to invert the images
+- Image converted into a Numpy array for prediction
+- The model predicts the digit in the image as the image is displayed
+- This continues until all digits in the digit directory are processed
